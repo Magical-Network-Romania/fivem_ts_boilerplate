@@ -1,0 +1,48 @@
+{
+	"name": "fivem_ts_boilerplate",
+	"author": "Magical Development Team",
+	"version": "0.0.0",
+	"license": "UNLICENSED",
+	"description": "A boilerplate for creating FiveM resources using TypeScript.",
+	"type": "module",
+	"scripts": {
+		"web:dev": "cd web && vite dev",
+		"build": "node scripts/build.js",
+		"watch": "node scripts/build.js --watch",
+		"format": "npx biome format --write",
+		"check": "npx biome check --write"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate.git"
+	},
+	"keywords": [
+		"fivem",
+		"typescript",
+		"ts"
+	],
+	"bugs": {
+		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate/issues"
+	},
+	"homepage": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate#readme",
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@citizenfx/client": "latest",
+		"@citizenfx/server": "latest",
+		"@overextended/fx-utils": "^0.0.4",
+		"@types/node": "^22.13.10",
+		"@types/react": "^19.0.10",
+		"@types/react-dom": "^19.0.4",
+		"@vitejs/plugin-react": "^4.3.4",
+		"esbuild": "^0.25.1",
+		"typescript": "^5.8.2",
+		"vite": "^6.2.2"
+	},
+	"dependencies": {
+		"@nativewrappers/fivem": "latest",
+		"@overextended/ox_lib": "latest",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	}
+}
+
