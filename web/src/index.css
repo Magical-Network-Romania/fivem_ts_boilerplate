@@ -1,0 +1,21 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+
+	user-select: none;
+}
+
+#root {
+	height: 100%;
+	width: 100%;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#root .in-browser {
+	background-image: url("https://i.imgur.com/3pzRj9n.png");
+}
