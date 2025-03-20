@@ -1,0 +1,68 @@
+{
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true,
+		"defaultBranch": "main"
+	},
+	"files": { "ignoreUnknown": true },
+	"formatter": {
+		"enabled": true,
+		"useEditorconfig": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "crlf",
+		"lineWidth": 120,
+		"attributePosition": "auto",
+		"bracketSpacing": true
+	},
+	"organizeImports": { "enabled": true },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "off",
+				"noForEach": "off",
+				"noUselessStringConcat": "warn",
+				"noUselessUndefinedInitialization": "error",
+				"noVoid": "error",
+				"useDateNow": "error"
+			},
+			"correctness": {
+				"noConstantMathMinMaxClamp": "warn",
+				"noNodejsModules": "off",
+				"noUndeclaredVariables": "off",
+				"noUnusedFunctionParameters": "warn",
+				"noUnusedImports": "warn",
+				"useHookAtTopLevel": "error"
+			},
+			"performance": {
+				"noBarrelFile": "warn",
+				"noReExportAll": "warn",
+				"useTopLevelRegex": "warn"
+			},
+			"style": {
+				"noImplicitBoolean": "error",
+				"noNamespace": "error",
+				"noNamespaceImport": "warn",
+				"noParameterAssign": "off",
+				"noYodaExpression": "error",
+				"useCollapsedElseIf": "error",
+				"useDefaultSwitchClause": "warn",
+				"useForOf": "warn",
+				"useShorthandAssign": "warn"
+			},
+			"suspicious": {
+				"noEmptyBlockStatements": "error",
+				"useAwait": "warn"
+			}
+		}
+	},
+	"json": {
+		"parser": { "allowTrailingCommas": false },
+		"formatter": { "trailingCommas": "none" }
+	},
+	"css": { "formatter": { "enabled": true } }
+}
