@@ -14,7 +14,6 @@
 		"indentWidth": 4,
 		"lineEnding": "crlf",
 		"lineWidth": 120,
-		"attributePosition": "auto",
 		"bracketSpacing": true
 	},
 	"organizeImports": { "enabled": true },
@@ -62,13 +61,36 @@
 	},
 	"javascript": {
 		"formatter": {
+			"enabled": true,
 			"trailingCommas": "none",
-			"semicolons": "always"
+			"semicolons": "always",
+			"indentStyle": "tab",
+			"indentWidth": 4,
+			"lineEnding": "crlf",
+			"lineWidth": 120,
+			"quoteStyle": "double",
+			"bracketSpacing": true
 		}
 	},
 	"json": {
 		"parser": { "allowTrailingCommas": false },
-		"formatter": { "trailingCommas": "none" }
+		"formatter": {
+			"indentStyle": "tab",
+			"indentWidth": 4,
+			"lineEnding": "crlf",
+			"lineWidth": 120,
+			"trailingCommas": "none"
+		}
 	},
-	"css": { "formatter": { "enabled": true } }
+	"css": {
+		"parser": { "cssModules": true },
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 4,
+			"lineEnding": "crlf",
+			"lineWidth": 120,
+			"quoteStyle": "double"
+		}
+	}
 }
