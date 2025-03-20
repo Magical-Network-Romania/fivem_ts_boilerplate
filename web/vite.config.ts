@@ -8,8 +8,8 @@ export default defineConfig({
 	base: "./",
 	resolve: {
 		alias: {
-			"@common": path.resolve(__dirname, "../src/common"),
-		},
+			"@common": path.resolve(__dirname, "../src/common")
+		}
 	},
 	build: {
 		outDir: "../dist/web",
@@ -18,8 +18,8 @@ export default defineConfig({
 			output: {
 				assetFileNames: "assets/[name][extname]",
 				entryFileNames: "assets/[name].js",
-				chunkFileNames: "assets/[name].js",
-			},
-		},
-	},
+				chunkFileNames: "assets/[name].js"
+			}
+		}
+	}
 });
