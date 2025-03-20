@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"module": "ES2022",
+		"strict": true,
+		"composite": true,
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "bundler"
+	},
+	"include": ["vite.config.ts"]
+}
