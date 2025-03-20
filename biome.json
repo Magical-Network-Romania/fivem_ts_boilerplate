@@ -60,6 +60,12 @@
 			}
 		}
 	},
+	"javascript": {
+		"formatter": {
+			"trailingCommas": "none",
+			"semicolons": "always"
+		}
+	},
 	"json": {
 		"parser": { "allowTrailingCommas": false },
 		"formatter": { "trailingCommas": "none" }
