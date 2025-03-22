@@ -19,6 +19,7 @@
 		// Module
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
+		"baseUrl": "./",
 		"paths": {
 			"@common/*": ["./src/common/*"]
 		}
