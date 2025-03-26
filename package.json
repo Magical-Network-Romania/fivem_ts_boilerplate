@@ -16,7 +16,11 @@
 		"type": "git",
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate.git"
 	},
-	"keywords": ["fivem", "typescript", "ts"],
+	"keywords": [
+		"fivem",
+		"typescript",
+		"ts"
+	],
 	"bugs": {
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate/issues"
 	},
@@ -37,7 +41,6 @@
 	"dependencies": {
 		"@nativewrappers/fivem": "latest",
 		"@overextended/ox_lib": "latest",
-		"ajv": "^8.17.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0"
 	}
