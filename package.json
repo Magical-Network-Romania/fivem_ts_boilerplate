@@ -3,28 +3,23 @@
 	"author": "Magical Development Team",
 	"version": "0.0.0",
 	"license": "UNLICENSED",
-	"description": "A boilerplate for creating FiveM resources using TypeScript.",
+	"description": "A boilerplate for creating FiveM resources using TypeScript and React.",
 	"type": "module",
 	"scripts": {
 		"web:dev": "cd web && vite dev",
 		"build": "node scripts/build.js",
 		"watch": "node scripts/build.js --watch",
-		"format": "npx biome format --write",
-		"check": "npx biome check --write"
+		"format": "biome format --write",
+		"check": "biome check --write"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate.git"
 	},
-	"keywords": [
-		"fivem",
-		"typescript",
-		"ts"
-	],
+	"keywords": ["fivem", "typescript", "ts"],
 	"bugs": {
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate/issues"
 	},
-	"homepage": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate#readme",
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@citizenfx/client": "latest",
