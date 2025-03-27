@@ -4,9 +4,9 @@ import { useNuiEvent } from "./hooks/useNuiEvent";
 import { isEnvBrowser } from "./utils/misc";
 
 function App() {
-	const [visible, setVisible] = useState(isEnvBrowser());
+	const [visible, setVisible] = useState<boolean>(isEnvBrowser());
 
-	useNuiEvent("setVisible", (data: { visible?: boolean }) => {
+	useNuiEvent<{ visible?: boolean }>("setVisible", (data) => {
 		setVisible(data.visible || false);
 	});
 
