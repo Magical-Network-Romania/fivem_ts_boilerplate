@@ -13,4 +13,12 @@ createRoot(rootElement).render(
 	</StrictMode>
 );
 
-if (isEnvBrowser()) rootElement.classList.add("in-browser");
+if (isEnvBrowser()) {
+	rootElement.classList.add("in-browser");
+
+	const dayBackground = true;
+	rootElement.style.setProperty(
+		"--browserBackground",
+		`url(${dayBackground ? "https://i.imgur.com/3pzRj9n.png" : "https://i.imgur.com/iPTAdYV.png"})`
+	);
+}

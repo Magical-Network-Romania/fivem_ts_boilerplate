@@ -16,6 +16,6 @@ body {
 	background-position: center;
 }
 
-#root .in-browser {
-	background-image: url("https://i.imgur.com/3pzRj9n.png");
+#root.in-browser {
+	background-image: var(--browserBackground);
 }
