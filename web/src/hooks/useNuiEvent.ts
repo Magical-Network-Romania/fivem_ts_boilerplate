@@ -37,8 +37,8 @@ export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => v
 		}
 
 		window.addEventListener("message", eventListener);
-		window.removeEventListener("message", eventListener);
 
-		return;
+		// Remove Event Listener on component cleanup
+		return () => window.removeEventListener("message", eventListener);
 	}, [action]);
 }
