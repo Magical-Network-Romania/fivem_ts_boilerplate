@@ -11,7 +11,9 @@ export default defineConfig({
 			"@common": path.resolve(__dirname, "../src/common")
 		}
 	},
+	publicDir: "../",
 	build: {
+		copyPublicDir: false,
 		outDir: "../dist/web",
 		emptyOutDir: true,
 		rollupOptions: {
