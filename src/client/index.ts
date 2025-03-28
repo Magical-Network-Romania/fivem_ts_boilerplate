@@ -1,4 +1,4 @@
-import config from "@common/config";
+import { gameConfig as config } from "@common/config";
 import { hello } from "@common/index";
 
 hello();
