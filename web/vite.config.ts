@@ -13,6 +13,7 @@ export default defineConfig({
 	},
 	publicDir: "../",
 	build: {
+		target: ["es2022"],
 		copyPublicDir: false,
 		outDir: "../dist/web",
 		emptyOutDir: true,
