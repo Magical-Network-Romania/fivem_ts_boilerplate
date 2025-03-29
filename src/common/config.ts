@@ -1,8 +1,13 @@
-import type configType from "static/config.json";
+import type { ConfigType } from "@common/types";
+import { resourceEnv } from "./resource";
 import { LoadJsonFile } from "./utils/file";
 import { fetchJsonFile } from "./utils/file";
 
-const webConfig: Promise<typeof configType> = fetchJsonFile<typeof configType>("static/config.json");
-const gameConfig: typeof configType = LoadJsonFile<typeof configType>("static/config.json");
+let config: ConfigType;
 
-export { webConfig, gameConfig };
+// @ts-ignore
+// biome-ignore lint/suspicious/noConfusingLabels: This is a drop label. Code here will only be executed when it is built in the web. On client/server this code will be discarded and not built
+$BROWSER: config = await fetchJsonFile<ConfigType>("static/config.json");
+if (resourceEnv === "game") config = LoadJsonFile<ConfigType>("static/config.json");
+
+export default config;
