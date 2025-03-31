@@ -1,9 +1,11 @@
+import "./index.css";
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import { isEnvBrowser } from "./utils/misc";
-import "./index.css";
+
 import { fetchNui } from "./utils/fetchNui";
+import { isEnvBrowser } from "./utils/misc";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element.");
@@ -20,7 +22,7 @@ if (isEnvBrowser()) {
 	const dayBackground = true;
 	rootElement.style.setProperty(
 		"--browserBackground",
-		`url(${dayBackground ? "https://i.imgur.com/3pzRj9n.png" : "https://i.imgur.com/iPTAdYV.png"})`
+		`url(${dayBackground ? "https://i.imgur.com/bMWrCgo.png" : "https://i.imgur.com/tu7wN1B.png"})`
 	);
 }
 
