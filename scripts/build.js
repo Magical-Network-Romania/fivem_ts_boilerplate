@@ -1,6 +1,6 @@
 //@ts-check
 
-import { createBuilder, createFxmanifest } from "@overextended/fx-utils";
+import { createBuilder, createFxmanifest } from "@communityox/fx-utils";
 import { exec, exists, getFiles } from "./utils.js";
 
 const watch = process.argv.includes("--watch");

@@ -35,7 +35,7 @@ Use `npm run build` to build all project files in production mode.
 - [/dist/](dist)
   - Compiled project files.
 - [/locales/](locales)
-  - JSON files used for translations with [ox_lib](https://overextended.dev/ox_lib/Modules/Locale/Shared).
+  - JSON files used for translations with [ox_lib](https://coxdocs.dev/ox_lib/Modules/Locale/Shared).
 - [/scripts/](scripts)
   - Scripts used in the development process, but not part of the compiled resource.
 - [/src/](src)
