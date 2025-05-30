@@ -4,6 +4,7 @@
 		"types": ["@citizenfx/client"],
 		"baseUrl": ".",
 		"paths": {
+			"@common/*": ["../common/*"],
 			"~/*": ["*"]
 		}
 	},
