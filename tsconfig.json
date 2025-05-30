@@ -19,10 +19,10 @@
 		// Module
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
-		"baseUrl": "./",
+		"baseUrl": ".",
 		"paths": {
-			"@common/*": ["./src/common/*"]
+			"@common/*": ["src/common/*"]
 		}
 	},
-	"include": ["./src", "./web"]
+	"include": ["src", "web"]
 }

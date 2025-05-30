@@ -8,7 +8,8 @@ export default defineConfig({
 	base: "./",
 	resolve: {
 		alias: {
-			"@common": path.resolve(__dirname, "../src/common")
+			"@common": path.resolve(__dirname, "../src/common"),
+			"~": path.resolve(__dirname, "src")
 		}
 	},
 	publicDir: "../",
