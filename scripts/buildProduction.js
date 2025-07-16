@@ -1,6 +1,7 @@
 //@ts-check
 
 import { writeFile } from "node:fs/promises";
+import { stripPrefixKeyword } from "./data/buildProcess.json";
 import { outputDirectories, resourceDependencies, resourceMetadata } from "./data/output.json";
 import { exec } from "./utils/commands.js";
 import { exists, getFiles } from "./utils/files.js";
@@ -17,7 +18,11 @@ await Bun.build({
 
 if (web) await exec("cd ./web && vite build");
 
-const files = await getFiles(`${outputDirectories.main}/${outputDirectories.web}`, outputDirectories.staticData);
+const files = await getFiles(
+	`${outputDirectories.main}/${outputDirectories.web}`,
+	outputDirectories.staticData,
+	`${stripPrefixKeyword}${outputDirectories.main}/`
+);
 const FxManifestText = await generateFxManifestText(
 	[`${outputDirectories.client}/*.js`],
 	[`${outputDirectories.server}/*.js`],
@@ -26,4 +31,4 @@ const FxManifestText = await generateFxManifestText(
 	resourceMetadata
 );
 
-await writeFile(`./fxmanifest.lua`, FxManifestText);
+await writeFile(`./${outputDirectories.main}/fxmanifest.lua`, FxManifestText);

@@ -9,6 +9,7 @@
 	"scripts": {
 		"web": "cd web && vite dev",
 		"build": "bun run scripts/build.js",
+		"build:production": "bun run scripts/buildProduction.js",
 		"format": "biome format --write",
 		"check": "biome check --write"
 	},
