@@ -1,4 +1,4 @@
-import type { ResourceContext, ResourceEnvironment } from "@common/types";
+import type { ResourceContext, ResourceEnvironment } from "@shared/types";
 
 /**
  * Extract the global window object from globalThis.

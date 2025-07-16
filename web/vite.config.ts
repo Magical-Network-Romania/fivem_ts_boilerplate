@@ -1,6 +1,7 @@
 import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { outputDirectories } from "../scripts/data/output.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +9,8 @@ export default defineConfig({
 	base: "./",
 	resolve: {
 		alias: {
-			"@common": path.resolve(__dirname, "../src/common"),
+			"@assets": path.resolve(__dirname, "../assets"),
+			"@shared": path.resolve(__dirname, "../shared"),
 			"~": path.resolve(__dirname, "src")
 		}
 	},
@@ -16,7 +18,7 @@ export default defineConfig({
 	build: {
 		target: ["es2022"],
 		copyPublicDir: false,
-		outDir: "../dist/web",
+		outDir: `../${outputDirectories.main}/${outputDirectories.web}`,
 		emptyOutDir: true,
 		rollupOptions: {
 			output: {

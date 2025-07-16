@@ -16,7 +16,6 @@
 		"lineWidth": 120,
 		"bracketSpacing": true
 	},
-	"organizeImports": { "enabled": true },
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -45,7 +44,6 @@
 			"style": {
 				"noImplicitBoolean": "error",
 				"noNamespace": "error",
-				"noNamespaceImport": "warn",
 				"noParameterAssign": "off",
 				"noYodaExpression": "error",
 				"useCollapsedElseIf": "error",

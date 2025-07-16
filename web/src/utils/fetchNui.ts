@@ -1,5 +1,15 @@
-import { isEnvBrowser } from "./misc";
+import { resourceName } from "@shared/resource";
+import { isEnvBrowser } from "./browser";
 
+/**
+ * Utility function to send NUI (browser-to-client) fetch requests in FiveM.
+ *
+ * @template T - The expected response type.
+ * @param {string} eventName - The event name to send to the NUI resource.
+ * @param {unknown} [data] - Optional data to send with the request.
+ * @param {{ data: T; delay?: number }} [mock] - Optional mock response for browser environment, with optional delay in ms.
+ * @returns {Promise<T>} - Resolves with the response data of type T.
+ */
 export async function fetchNui<T = unknown>(
 	eventName: string,
 	data?: unknown,
@@ -19,8 +29,6 @@ export async function fetchNui<T = unknown>(
 		body: JSON.stringify(data)
 	};
 
-	const resourceName = (window as unknown as { GetParentResourceName?: () => string }).GetParentResourceName?.();
 	const resp = await fetch(`https://${resourceName ?? "nui-frame-app"}/${eventName}`, options);
-
 	return (await resp.json()) as T;
 }

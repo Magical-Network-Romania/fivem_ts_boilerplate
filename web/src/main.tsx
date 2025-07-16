@@ -4,8 +4,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 
-import { fetchNui } from "./utils/fetchNui";
-import { isEnvBrowser } from "./utils/misc";
+import { isEnvBrowser } from "./utils/browser";
 
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element.");
@@ -25,5 +24,3 @@ if (isEnvBrowser()) {
 		`url(${dayBackground ? "https://i.imgur.com/bMWrCgo.png" : "https://i.imgur.com/tu7wN1B.png"})`
 	);
 }
-
-fetchNui("nuiReady");

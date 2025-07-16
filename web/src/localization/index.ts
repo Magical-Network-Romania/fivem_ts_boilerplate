@@ -1,8 +1,8 @@
 import type { Locale, LocaleKey } from "@shared/types";
-import { LoadJsonFile } from "./utils/file";
+import { fetchJsonFile } from "~/utils/files";
 
-const currentLocale = LoadJsonFile<{ locale: string }>("assets/configs/locale.json").locale;
-const allLocales = LoadJsonFile<Locale>(`assets/locales/${currentLocale}.json`);
+const currentLocale = (await fetchJsonFile<{ locale: string }>("assets/configs/locale.json")).locale;
+const allLocales = await fetchJsonFile<Locale>(`assets/locales/${currentLocale}.json`);
 
 /**
  * Retrieves the localized string for the given locale key.

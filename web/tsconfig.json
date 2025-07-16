@@ -11,7 +11,8 @@
 
 		"baseUrl": ".",
 		"paths": {
-			"@common/*": ["../src/common/*"],
+			"@assets/*": ["../assets/*"],
+			"@shared/*": ["../shared/*"],
 			"~/*": ["src/*"]
 		}
 	},

@@ -4,7 +4,9 @@
 		"types": ["@types/node", "@citizenfx/server"],
 		"baseUrl": ".",
 		"paths": {
+			"@assets/*": ["../../assets/*"],
 			"@common/*": ["../common/*"],
+			"@shared/*": ["../../shared/*"],
 			"~/*": ["*"]
 		}
 	},

@@ -1,11 +1,5 @@
+import type { NuiHandlerSignature, NuiMessageData } from "@shared/types";
 import { type RefObject, useEffect, useRef } from "react";
-
-interface NuiMessageData<T = unknown> {
-	action: string;
-	data: T;
-}
-
-type NuiHandlerSignature<T> = (data: T) => void;
 
 /**
  * A hook that manage events listeners for receiving data from the client scripts

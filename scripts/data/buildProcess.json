@@ -1,0 +1,5 @@
+{
+	"stripPrefixKeyword": "strip:",
+	"stripPrefixRegex": "^strip:",
+	"leadingSlashOrBackslashRegex": "^\\/|\\\\"
+}

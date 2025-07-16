@@ -1,5 +1,3 @@
-import type confing from "static/config.json";
-
 /**
  * Specifies where the resource code is running.
  * - `"client"`: Code executing on the game client.
@@ -15,9 +13,3 @@ export type ResourceContext = "client" | "server" | "web";
  * - `"browser"`: External/standalone browser window.
  */
 export type ResourceEnvironment = "game" | "cef" | "browser";
-
-/**
- * Inferred directly from `static/config.json`.
- * Whenever that JSON changes, this type stays in sync.
- */
-export type ConfigType = typeof confing;

@@ -1,0 +1,14 @@
+{
+	"outputDirectories": {
+		"main": "dist",
+		"client": "client",
+		"server": "server",
+		"web": "web",
+		"staticData": "assets"
+	},
+	"resourceDependencies": ["/server:13068", "/onesync"],
+	"resourceMetadata": {
+		"ui_page": "web/index.html",
+		"node_version": "22"
+	}
+}
