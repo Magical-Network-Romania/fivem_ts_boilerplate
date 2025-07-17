@@ -13,13 +13,7 @@ import { readJsonFile } from "./files.js";
  * @param {Record<string, string>} [metadata] Optional additional metadata properties for the manifest.
  * @returns {Promise<string>} The text which is to be written in the fx manifest.
  */
-export async function generateFxManifestText(
-	clientFiles,
-	serverFiles,
-	otherFiles = [],
-	dependencies = [],
-	metadata = {}
-) {
+export async function generateFxManifestText(clientFiles, serverFiles, otherFiles = [], dependencies = [], metadata = {}) {
 	const pkg = await readJsonFile("package.json");
 	const fxmanifestProperties = {
 		name: pkg.name,

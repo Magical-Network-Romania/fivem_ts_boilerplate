@@ -17,13 +17,6 @@
 		"type": "git",
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate.git"
 	},
-	"keywords": [
-		"fivem",
-		"react",
-		"typescript",
-		"boilerplate",
-		"template"
-	],
 	"bugs": {
 		"url": "https://github.com/Magical-Network-Romania/fivem_ts_boilerplate/issues"
 	},

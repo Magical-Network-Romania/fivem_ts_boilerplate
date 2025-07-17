@@ -10,11 +10,7 @@ import { isEnvBrowser } from "./browser";
  * @param {{ data: T; delay?: number }} [mock] - Optional mock response for browser environment, with optional delay in ms.
  * @returns {Promise<T>} - Resolves with the response data of type T.
  */
-export async function fetchNui<T = unknown>(
-	eventName: string,
-	data?: unknown,
-	mock?: { data: T; delay?: number }
-): Promise<T> {
+export async function fetchNui<T = unknown>(eventName: string, data?: unknown, mock?: { data: T; delay?: number }): Promise<T> {
 	if (isEnvBrowser()) {
 		if (!mock) return await new Promise((resolve) => resolve);
 		await new Promise((resolve) => setTimeout(resolve, mock.delay));

@@ -26,4 +26,4 @@ const FxManifestText = await generateFxManifestText(
 	resourceMetadata
 );
 
-await writeFile(`./fxmanifest.lua`, FxManifestText);
+await writeFile("./fxmanifest.lua", FxManifestText);

@@ -1,0 +1,75 @@
+{
+	"root": false,
+	"extends": ["../biome.json"],
+	"files": {
+		"includes": ["**"],
+		"ignoreUnknown": true
+	},
+	"linter": {
+		"enabled": true,
+		"domains": {
+			"react": "all"
+		},
+		"rules": {
+			"nursery": {
+				"noReactPropAssign": "error",
+				"noImportantStyles": "error",
+				"noUnknownAtRule": "error"
+			},
+			"style": {
+				"noImplicitBoolean": "warn",
+				"useComponentExportOnlyModules": "error",
+				"useConsistentCurlyBraces": "error",
+				"useFragmentSyntax": "warn",
+				"useSelfClosingElements": "warn",
+				"noValueAtRule": "error"
+			},
+			"suspicious": {
+				"noSuspiciousSemicolonInJsx": "error"
+			}
+		}
+	},
+	"javascript": {
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": false,
+			"jsxEverywhere": false
+		},
+		"formatter": {
+			"enabled": true,
+			"quoteStyle": "double",
+			"jsxQuoteStyle": "double",
+			"bracketSameLine": false,
+			"attributePosition": "auto",
+			"quoteProperties": "asNeeded",
+			"trailingCommas": "none",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"indentStyle": "tab",
+			"indentWidth": 4,
+			"lineEnding": "crlf",
+			"lineWidth": 140,
+			"bracketSpacing": true,
+			"expand": "auto"
+		},
+		"jsxRuntime": "transparent"
+	},
+	"css": {
+		"linter": {
+			"enabled": true
+		},
+		"parser": {
+			"cssModules": true
+		},
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 4,
+			"lineEnding": "crlf",
+			"lineWidth": 140,
+			"quoteStyle": "double"
+		}
+	}
+}

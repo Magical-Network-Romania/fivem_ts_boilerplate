@@ -37,7 +37,9 @@ export async function readJsonFile(path) {
  */
 export async function getFiles(...args) {
 	let stripPrefix;
-	if (typeof args[args.length - 1] === "string" && args[args.length - 1].startsWith(stripPrefixKeyword)) {
+	const maybeLastArg = args.at(-1);
+
+	if (typeof maybeLastArg === "string" && maybeLastArg.startsWith(stripPrefixKeyword)) {
 		const lastArg = args.pop();
 		stripPrefix = typeof lastArg === "string" ? lastArg.replace(new RegExp(stripPrefixRegex), "") : undefined;
 	}
@@ -63,9 +65,7 @@ export async function getFiles(...args) {
 	let result = files.flat();
 	if (stripPrefix) {
 		result = result.map((f) =>
-			f.startsWith(stripPrefix)
-				? f.slice(stripPrefix.length).replace(new RegExp(leadingSlashOrBackslashRegex), "")
-				: f
+			f.startsWith(stripPrefix) ? f.slice(stripPrefix.length).replace(new RegExp(leadingSlashOrBackslashRegex), "") : f
 		);
 	}
 
