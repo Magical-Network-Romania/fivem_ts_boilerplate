@@ -1,12 +1,12 @@
-.boilerplate-counter h3 {
+.title {
 	color: crimson;
 }
 
-.boilerplate-counter p {
+.text {
 	color: orangered;
 }
 
-.counter-buttons button {
+.buttons button {
 	color: white;
 	background-color: blueviolet;
 }
