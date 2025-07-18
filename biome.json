@@ -58,7 +58,7 @@
 				"noParameterAssign": {
 					"level": "error",
 					"options": {
-						"propertyAssignment": "deny"
+						"propertyAssignment": "allow"
 					}
 				},
 				"noParameterProperties": "error",
