@@ -32,7 +32,6 @@
 				"noUnassignedVariables": "info",
 				"useAdjacentGetterSetter": "error",
 				"useExhaustiveSwitchCases": "warn",
-				"useExplicitType": "warn",
 				"useJsonImportAttribute": "error",
 				"useReadonlyClassProperties": "error",
 				"useSingleJsDocAsterisk": "warn",
