@@ -6,6 +6,9 @@ A boilerplate for creating FiveM resources using TypeScript and React.
 ### Node.js v22+
 Install any LTS release of [`Node.js`](https://nodejs.org/) from v22.
 
+### Bun
+Install Bun from ['bun.sh'](https://bun.sh/).
+
 ### Setup
 Initialise your own repository by using one of the options below:
 - [Create a new repository](https://github.com/new?template_name=fivem_ts_boilerplate&template_owner=Magical-Network-Romania) using this template.
@@ -15,32 +18,32 @@ Initialise your own repository by using one of the options below:
 
 Go to your new directory and execute the following command to install dependencies:
 ```
-npm install
+bun install
 ```
 
 ## Development
-- Use `npm run watch` to actively rebuild modified files while developing the resource.
-- During web development, use `npm run web:dev` to start vite's web server and watch for changes.
+- During web development, use `bun run web` to start vite's web server and watch for changes.
 - For code formatting and linting:
-  - Use `npm run format` to just format the code using biome.
-  - Use `npm run check` to format and lint the code using biome.
+  - Use `bun run format` to just format the code using biome.
+  - Use `bun run check` to format and lint the code using biome.
 
 
 ## Build
-Use `npm run build` to build all project files in production mode.
+- During development use `bun run build`. This will create the fxmanifest file in the root directory, with compiled scripts in the dist directory. It exists so that you can easily develop the resource directly in the resources folder, without moving any files and only needing to restart the resource.
+- For production use `bun run build:production`. This will output all the compiled files inside the dist directory, making it easy to transfer all of them on your server.
 
 ## Layout
 - [/.vscode/](.vscode)
-  - Settings for VS Code so that all members share the same settings.
+  - Settings for VS Code so that all members share them.
+- [/assets/](assets)
+ - Contains all the static files used by the resource such as configs, locales, images, icons, etc.
 - [/dist/](dist)
   - Compiled project files.
-- [/locales/](locales)
-  - JSON files used for translations with [ox_lib](https://coxdocs.dev/ox_lib/Modules/Locale/Shared).
 - [/scripts/](scripts)
   - Scripts used in the development process, but not part of the compiled resource.
+- [/shared/](shared)
+ - Contains code that is used by both the web and the game (client and/or server).
 - [/src/](src)
-  - Project source code.
-- [/static/](static)
-  - Files to include with the resource that aren't compiled or loaded (e.g. config).
+  - Contains the source code for the client and web.
 - [/web/](web)
   - Contains the front-end code for the in-game web interface (NUI).
