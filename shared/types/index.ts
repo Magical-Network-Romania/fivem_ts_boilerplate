@@ -1,3 +1,10 @@
-export type { Locale, LocaleKey, LocaleSettings, LocaleValue } from "./locale";
-export type { NuiHandlerSignature, NuiMessageData } from "./nuiMessages";
-export type { ResourceContext, ResourceEnvironment } from "./resource";
+export type {
+	Locale,
+	LocaleKey,
+	LocaleSettings,
+	LocaleValue,
+	NuiHandlerSignature,
+	NuiMessageData,
+	ResourceContext,
+	ResourceEnvironment
+} from "./core/";
