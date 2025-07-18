@@ -1,3 +1,4 @@
+import process from "node:process";
 import type { NuiMessageData } from "@shared/types";
 import { isEnvBrowser } from "./browser";
 
