@@ -1,5 +1,5 @@
 import type { NuiHandlerSignature, NuiMessageData } from "@shared/types";
-import { type RefObject, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 /**
  * A hook that manage events listeners for receiving data from the client scripts
@@ -13,7 +13,7 @@ import { type RefObject, useEffect, useRef } from "react";
  *
  */
 export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => void): void {
-	const savedHandler: RefObject<NuiHandlerSignature<T>> = useRef(() => undefined);
+	const savedHandler = useRef<NuiHandlerSignature<T>>(() => undefined);
 
 	// Make sure we handle for a reactive handler
 	useEffect(() => {
