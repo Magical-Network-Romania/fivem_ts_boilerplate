@@ -11,7 +11,7 @@ import { type RefObject, useEffect, useRef } from "react";
  *   // whatever logic you want
  * })
  *
- **/
+ */
 export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => void): void {
 	const savedHandler: RefObject<NuiHandlerSignature<T>> = useRef(() => undefined);
 
@@ -21,7 +21,7 @@ export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => v
 	}, [handler]);
 
 	useEffect(() => {
-		function eventListener(event: MessageEvent<NuiMessageData<T>>) {
+		function eventListener(event: MessageEvent<NuiMessageData<T>>): void {
 			const { action: eventAction, data } = event.data;
 
 			if (!savedHandler.current) return;
