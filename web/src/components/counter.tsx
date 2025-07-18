@@ -11,10 +11,10 @@ function Counter(): JSX.Element {
 			<p className={styles.text}>Count: {count}</p>
 
 			<div className={styles.buttons}>
-				<button type="button" onClick={() => setCount((prev) => ++prev)}>
+				<button type="button" onClick={() => setCount((prev) => prev + 1)}>
 					Increment
 				</button>
-				<button type="button" onClick={() => setCount((prev) => --prev)}>
+				<button type="button" onClick={() => setCount((prev) => prev - 1)}>
 					Decrement
 				</button>
 			</div>
