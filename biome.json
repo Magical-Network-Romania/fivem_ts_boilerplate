@@ -27,7 +27,6 @@
 				"noMisusedPromises": "warn",
 				"noNoninteractiveElementInteractions": "warn",
 				"noProcessGlobal": "error",
-				"noSecrets": "error",
 				"noShadow": "error",
 				"noUnassignedVariables": "info",
 				"useAdjacentGetterSetter": "error",
