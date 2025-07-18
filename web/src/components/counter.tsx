@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import { getLocale } from "~/localization";
 import styles from "./counter.module.css";
 
-function Counter() {
+function Counter(): JSX.Element {
 	const [count, setCount] = useState<number>(0);
 
 	return (
