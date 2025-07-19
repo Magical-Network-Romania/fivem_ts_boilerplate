@@ -1,7 +1,9 @@
 {
 	"hello": "Salut",
-	"test": {
-		"1": "Test 1",
-		"2": "Test 2"
+	"greet": "Salut, %s!",
+	"example_names": {
+		"1": "Ion",
+		"2": "Andrei",
+		"3": "Diana"
 	}
 }

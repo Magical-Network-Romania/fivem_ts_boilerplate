@@ -7,7 +7,7 @@ function Counter(): JSX.Element {
 
 	return (
 		<div>
-			<h3 className={styles.title}>Boilerplate Counter, {getLocale("hello")}</h3>
+			<h3 className={styles.title}>Boilerplate Counter, {getLocale("greet", getLocale("example_names.1"))}</h3>
 			<p className={styles.text}>Count: {count}</p>
 
 			<div className={styles.buttons}>
