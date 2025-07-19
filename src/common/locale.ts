@@ -10,7 +10,7 @@ const allLocales: Locale = LoadJsonFile<Locale>(`assets/locales/${currentLocale}
  *
  * @param {LocaleKey} key - The key to look up in the locale file.
  * @param {...string} args - Optional arguments to replace placeholders in the localized string. Placeholders should be in the format `%s` and will be replaced in order.
- * @returns {LocaleValue} The localized string, or the key itself if not found.
+ * @returns {string} The localized string, or the key itself if it isn't found.
  */
 export function getLocale(key: LocaleKey, ...args: string[]): string {
 	const parts = key.split(".");
