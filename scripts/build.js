@@ -19,8 +19,8 @@ if (web) await exec("cd ./web && vite build");
 
 const files = await getFiles(`${outputDirectories.main}/${outputDirectories.web}`, outputDirectories.staticData);
 const FxManifestText = await generateFxManifestText(
-	[`${outputDirectories.client}/*.js`],
-	[`${outputDirectories.server}/*.js`],
+	[`${outputDirectories.main}/${outputDirectories.client}/*.js`],
+	[`${outputDirectories.main}/${outputDirectories.server}/*.js`],
 	files,
 	resourceDependencies,
 	resourceMetadata
