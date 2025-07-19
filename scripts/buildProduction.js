@@ -28,7 +28,7 @@ const FxManifestText = await generateFxManifestText(
 	[`${outputDirectories.server}/*.js`],
 	files,
 	resourceDependencies,
-	resourceMetadata
+	resourceMetadata.production
 );
 
 await writeFile(`./${outputDirectories.main}/fxmanifest.lua`, FxManifestText);

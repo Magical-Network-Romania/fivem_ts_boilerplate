@@ -8,7 +8,13 @@
 	},
 	"resourceDependencies": ["/server:13068", "/onesync"],
 	"resourceMetadata": {
-		"ui_page": "web/index.html",
-		"node_version": "22"
+		"development": {
+			"ui_page": "dist/web/index.html",
+			"node_version": "22"
+		},
+		"production": {
+			"ui_page": "web/index.html",
+			"node_version": "22"
+		}
 	}
 }
