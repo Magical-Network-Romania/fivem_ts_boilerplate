@@ -1,8 +1,8 @@
 export type {
+	FlattenObjectKeys,
 	Locale,
 	LocaleKey,
 	LocaleSettings,
-	LocaleValue,
 	NuiHandlerSignature,
 	NuiMessageData,
 	ResourceContext,
