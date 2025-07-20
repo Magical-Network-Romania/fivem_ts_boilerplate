@@ -2,7 +2,7 @@ import type { AllBuildOptions, CommonBuildOptions, StrictBuildOptions, WebBuildO
 import { buildConfig } from "./buildConfig";
 
 export const commonBuildOptions: CommonBuildOptions = {
-	development: { bundle: true, sourcemap: "linked", keepNames: true, legalComments: "inline", minify: false },
+	development: { bundle: true, sourcemap: "inline", keepNames: true, legalComments: "inline", minify: false },
 	production: { bundle: true, sourcemap: false, keepNames: false, legalComments: "none", minify: true, treeShaking: true }
 } as const;
 
