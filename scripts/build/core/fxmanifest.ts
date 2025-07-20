@@ -43,7 +43,7 @@ export async function generateFxManifest(path: string, defaultSettings: FxManife
 		if (Array.isArray(value)) {
 			manifestLines.push(`${key} {`);
 
-			for (const item of value) manifestLines.push(`${config.arrayIndentValue}'${item}'`);
+			for (const item of value) manifestLines.push(`${config.arrayIndentValue}'${item}',`);
 
 			manifestLines.push("}");
 		}
