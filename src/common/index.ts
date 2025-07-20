@@ -3,5 +3,5 @@ import { getLocale } from "./locale";
 
 export function hello(): void {
 	console.log(`Current context: ${resourceContext}`);
-	console.log(getLocale("greet", getLocale("example_names.2")))
+	console.log(getLocale("greet", getLocale("example_names.2")));
 }
