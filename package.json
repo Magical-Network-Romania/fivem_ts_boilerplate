@@ -8,8 +8,8 @@
 	"type": "module",
 	"scripts": {
 		"web": "cd web && vite dev",
-		"build": "bun run scripts/build.js",
-		"build:production": "bun run scripts/buildProduction.js",
+		"build:dev": "NODE_ENV=development bun run scripts/build/index.ts",
+		"build:prod": "NODE_ENV=production bun run scripts/build/index.ts",
 		"format": "biome format --write",
 		"check": "biome check --write"
 	},

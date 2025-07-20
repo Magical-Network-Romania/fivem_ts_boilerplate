@@ -25,5 +25,5 @@
 			"@shared/*": ["shared/*"]
 		}
 	},
-	"include": ["src", "web"]
+	"include": ["src", "web", "scripts"]
 }

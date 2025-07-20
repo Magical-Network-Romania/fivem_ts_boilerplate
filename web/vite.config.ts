@@ -1,7 +1,6 @@
 import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { outputDirectories } from "../scripts/data/output.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,7 +17,6 @@ export default defineConfig({
 	build: {
 		target: ["es2022"],
 		copyPublicDir: false,
-		outDir: `../${outputDirectories.main}/${outputDirectories.web}`,
 		emptyOutDir: true,
 		rollupOptions: {
 			output: {
