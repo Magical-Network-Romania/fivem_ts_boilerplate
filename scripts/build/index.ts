@@ -1,3 +1,4 @@
+import { rm } from "node:fs/promises";
 import process from "node:process";
 import type { BuildOptions } from "esbuild";
 import type { BuildEnvironmentOptions } from "vite";
@@ -12,8 +13,24 @@ import { getFilePaths } from "./utils/files";
 console.log("⏳ | Started building the resource.");
 
 const isDevMode = process.env.NODE_ENV === "development";
-const stripOutDir: string | undefined = isDevMode ? undefined : `${stripOptions.prefixKeyword}${buildConfig.outDirectory}`;
 
+try {
+	await rm(buildConfig.outDirectory, { recursive: true });
+	console.log(`🧹 | Cleaned directory: ${buildConfig.outDirectory}.`);
+} catch (_error) {
+	console.warn(`⚠️ | Failed to clean ${buildConfig.outDirectory} folder.`);
+	// console.error(error);
+}
+
+try {
+	await Bun.file("./fxmanifest.lua").delete();
+	console.log("🧹 | Cleaned fxmanifest.lua from root folder.");
+} catch (_error) {
+	console.warn("⚠️ | Failed to clean fxmanifest from root folder.");
+	// console.error(error)
+}
+
+const stripOutDir: string | undefined = isDevMode ? undefined : `${stripOptions.prefixKeyword}${buildConfig.outDirectory}`;
 const activeBuildOptions: BuildOptions = isDevMode ? buildOptions.common.development : buildOptions.common.production;
 const gameBuildResult = await buildGameFiles(buildOptions.client, buildOptions.server, activeBuildOptions);
 
