@@ -7,8 +7,8 @@ import { isEnvBrowser } from "./utils/browser";
 function App(): JSX.Element {
 	const [visible, setVisible] = useState<boolean>(isEnvBrowser());
 
-	useNuiEvent<{ visible?: boolean }>("setVisible", (data) => {
-		setVisible(data.visible ?? false);
+	useNuiEvent<boolean>("setVisible", (data) => {
+		setVisible(data);
 	});
 
 	useEffect(() => {
