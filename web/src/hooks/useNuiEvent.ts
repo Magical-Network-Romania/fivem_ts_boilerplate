@@ -1,5 +1,5 @@
 import type { NuiHandlerSignature, NuiMessageData } from "@shared/types";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
 
 /**
  * A hook that manage events listeners for receiving data from the client scripts
@@ -12,27 +12,17 @@ import { useEffect, useRef } from "react";
  * })
  *
  */
-export function useNuiEvent<T = unknown>(action: string, handler: (data: T) => void): void {
-	const savedHandler = useRef<NuiHandlerSignature<T>>(() => undefined);
+export function useNuiEvent<T = unknown>(action: string, handler: NuiHandlerSignature<T>): void {
+	const listener = useCallback(
+		(event: MessageEvent<NuiMessageData<T>>) => {
+			if (event.data.action !== action) return;
+			handler(event.data.data);
+		},
+		[action, handler]
+	);
 
-	// Make sure we handle for a reactive handler
 	useEffect(() => {
-		savedHandler.current = handler;
-	}, [handler]);
-
-	useEffect(() => {
-		function eventListener(event: MessageEvent<NuiMessageData<T>>): void {
-			const { action: eventAction, data } = event.data;
-
-			if (!savedHandler.current) return;
-			if (eventAction !== action) return;
-
-			savedHandler.current(data);
-		}
-
-		window.addEventListener("message", eventListener);
-
-		// Remove Event Listener on component cleanup
-		return () => window.removeEventListener("message", eventListener);
-	}, [action]);
+		window.addEventListener("message", listener);
+		return () => window.removeEventListener("message", listener);
+	}, [listener]);
 }
