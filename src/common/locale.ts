@@ -15,20 +15,20 @@ const allLocales: Locale = LoadJsonFile<Locale>(`assets/locales/${currentLocale}
 export function getLocale(key: LocaleKey, ...args: string[]): string {
 	const parts = key.split(".");
 
-	// start from the full JSON; keep as unknown until we confirm it's indexable
-	let cursor: unknown = allLocales;
+	// Drill down into allLocales using reduce; if any step fails, we end up with undefined.
+	const cursor = parts.reduce<unknown | undefined>((currentValue, part) => {
+		if (typeof currentValue === "object" && currentValue !== null) return (currentValue as Record<string, unknown>)[part];
+		return undefined;
+	}, allLocales);
 
-	for (const part of parts) {
-		if (typeof cursor === "object" && cursor !== null) cursor = (cursor as Record<string, unknown>)[part];
-		else return key;
-	}
-
+	// If we got a string at the end, keep it, otherwise fall back to the key itself.
 	let result = typeof cursor === "string" ? cursor : key;
 
-	for (const arg of args) {
-		if (result.includes("%s")) result = result.replace("%s", arg);
-		else break;
-	}
+	// Perform %s substitutions in order via reduce.
+	result = args.reduce((prev, arg) => {
+		if (prev.includes("%s")) return prev.replace("%s", arg);
+		return prev;
+	}, result);
 
 	return result;
 }
