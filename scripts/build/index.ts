@@ -54,7 +54,7 @@ if (buildConfig.web && buildOptions.web) {
 	webBuilt = await buildWeb(buildConfig.web.entryDirectory, activeWebBuildOptions);
 
 	if (webBuilt) {
-		uiPage = `${buildConfig.outDirectory}/${buildConfig.web.outDirectory}/index.html`;
+		uiPage = `${stripOutDir ? "" : `${buildConfig.outDirectory}/`}${buildConfig.web.outDirectory}/index.html`;
 		const webFiles = await getFilePaths(
 			`${buildConfig.outDirectory}/${buildConfig.web.outDirectory}`,
 			...(stripOutDir ? [stripOutDir] : [])
