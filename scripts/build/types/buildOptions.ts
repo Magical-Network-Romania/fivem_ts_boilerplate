@@ -1,5 +1,5 @@
 import type { BuildOptions } from "esbuild";
-import type { BuildEnvironmentOptions } from "vite";
+import type { InlineConfig } from "vite";
 
 type RequiredBuildOptions = Required<Pick<BuildOptions, "entryPoints" | "outdir" | "platform" | "target" | "format">>;
 type OptionalBuildOptions = Partial<Omit<BuildOptions, keyof RequiredBuildOptions>>;
@@ -12,8 +12,8 @@ export interface CommonBuildOptions {
 }
 
 export interface WebBuildOptions {
-	development: BuildEnvironmentOptions;
-	production: BuildEnvironmentOptions;
+	development: InlineConfig;
+	production: InlineConfig;
 }
 
 export interface AllBuildOptions {

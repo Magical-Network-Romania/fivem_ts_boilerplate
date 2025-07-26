@@ -1,5 +1,5 @@
 import esbuild, { type BuildOptions } from "esbuild";
-import { type BuildEnvironmentOptions, build as viteBuild } from "vite";
+import { type InlineConfig, build as viteBuild } from "vite";
 import type { BuildResult, GameBuildResult, StrictBuildOptions } from "../types";
 import { checkDirectory, checkFile } from "../utils/files";
 
@@ -47,10 +47,10 @@ export async function buildGameFiles(
  * Builds the web using the vite builder.
  *
  * @param {string} path - The path to the web folder which contains the vite config as well as the html file.
- * @param {BuildEnvironmentOptions} [buildOptions] - Extra build options that can be added to the vite builder.
+ * @param {InlineConfig} [buildConfig] - Extra build options that can be added to the vite builder.
  * @returns {Promise<BuildResult>} A promise that resolves to BuildResult indicating if the web was built successfully or not.
  */
-export async function buildWeb(path: string, buildOptions?: BuildEnvironmentOptions): Promise<BuildResult> {
+export async function buildWeb(path: string, buildConfig?: InlineConfig): Promise<BuildResult> {
 	console.log("⏳ | Started building the web.");
 
 	if (!(await checkDirectory(path))) {
@@ -68,7 +68,7 @@ export async function buildWeb(path: string, buildOptions?: BuildEnvironmentOpti
 		return false;
 	}
 
-	await viteBuild({ root: path, build: buildOptions });
+	await viteBuild({ root: path, ...buildConfig });
 
 	console.log("✅ | Web built successfully.");
 	return true;

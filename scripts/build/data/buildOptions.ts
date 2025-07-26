@@ -24,16 +24,24 @@ export const serverBuildOptions: StrictBuildOptions = {
 
 export const webBuildOptions: WebBuildOptions = {
 	development: {
-		outDir: `../${buildConfig.outDirectory}/${buildConfig?.web?.outDirectory}`,
-		minify: false,
-		sourcemap: "inline",
-		copyPublicDir: false
+		// Required to overwrite the public directory to false so that absolute paths from the root directory are processed correctly and not overwritten to be relative.
+		publicDir: false,
+		build: {
+			outDir: `../${buildConfig.outDirectory}/${buildConfig?.web?.outDirectory}`,
+			minify: false,
+			sourcemap: "inline",
+			copyPublicDir: false
+		}
 	},
 	production: {
-		outDir: `../${buildConfig.outDirectory}/${buildConfig?.web?.outDirectory}`,
-		minify: true,
-		sourcemap: false,
-		copyPublicDir: false
+		// Required to overwrite the public directory to false so that absolute paths from the root directory are processed correctly and not overwritten to be relative.
+		publicDir: false,
+		build: {
+			outDir: `../${buildConfig.outDirectory}/${buildConfig?.web?.outDirectory}`,
+			minify: true,
+			sourcemap: false,
+			copyPublicDir: false
+		}
 	}
 } as const;
 

@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: "./",
+	base: "",
 	resolve: {
 		alias: {
 			"@assets": path.resolve(__dirname, "../assets"),
@@ -16,7 +16,6 @@ export default defineConfig({
 	publicDir: "../",
 	build: {
 		target: ["es2022"],
-		copyPublicDir: false,
 		emptyOutDir: true,
 		rollupOptions: {
 			output: {
