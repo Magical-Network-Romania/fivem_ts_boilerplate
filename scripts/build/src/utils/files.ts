@@ -1,5 +1,5 @@
 import fs, { constants, readdir } from "node:fs/promises";
-import { stripOptions } from "../data/default";
+import { stripOptions } from "../data/stripFileName";
 
 /**
  * Checks if the path to a directory exists.

@@ -1,32 +1,81 @@
-import type { BuildConfig, FxManifestConfig } from "../types";
+import type { ResourceBuildConfig } from "../src/types";
 
-export const buildConfig: BuildConfig = {
+export const buildConfig: ResourceBuildConfig = {
 	outDirectory: "dist",
-	client: {
-		entryFile: "src/client/index.ts",
-		outDirectory: "client"
-	},
-	server: {
-		entryFile: "src/server/index.ts",
-		outDirectory: "server"
+	staticDataDirectory: "assets",
+	game: {
+		client: {
+			entryFiles: ["src/client/index.ts"],
+			outDirectory: "client",
+			buildOptions: {
+				development: {
+					platform: "browser",
+					target: ["es2022"],
+					format: "iife"
+				},
+				production: {
+					platform: "browser",
+					target: ["es2022"],
+					format: "iife"
+				}
+			}
+		},
+		server: {
+			entryFiles: ["src/server/index.ts"],
+			outDirectory: "server",
+			buildOptions: {
+				development: {
+					platform: "node",
+					target: ["node22"],
+					format: "cjs"
+				},
+				production: {
+					platform: "node",
+					target: ["node22"],
+					format: "cjs"
+				}
+			}
+		},
+		commonEsbuildOptions: {
+			development: {
+				bundle: true,
+				sourcemap: "inline",
+				keepNames: true,
+				legalComments: "inline",
+				minify: false
+			},
+			production: {
+				bundle: true,
+				sourcemap: false,
+				keepNames: false,
+				legalComments: "none",
+				minify: true,
+				treeShaking: true
+			}
+		}
 	},
 	web: {
 		entryDirectory: "web",
-		outDirectory: "web"
-	},
-	staticDataDirectory: "assets"
-} as const;
-
-export const fxManifestConfig: FxManifestConfig = {
-	arrayIndentValue: "\t",
-	blankLines: {
-		game: 1,
-		node_version: 1,
-		description: 1,
-		ui_page: 1,
-		shared_script: 1,
-		client_script: 1,
-		server_script: 1,
-		files: 1
+		outDirectory: "web",
+		buildOptions: {
+			development: {
+				// Required to be false, to overwrite the public directory to false so that absolute paths from the root directory are processed correctly and not transformed to be relative.
+				publicDir: false,
+				build: {
+					minify: false,
+					sourcemap: "inline",
+					copyPublicDir: false
+				}
+			},
+			production: {
+				// Required to be false, to overwrite the public directory to false so that absolute paths from the root directory are processed correctly and not transformed to be relative.
+				publicDir: false,
+				build: {
+					minify: true,
+					sourcemap: false,
+					copyPublicDir: false
+				}
+			}
+		}
 	}
 } as const;
